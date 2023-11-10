@@ -20,6 +20,9 @@ spec:
       containers:
       - name: mi-aplicacion-clima
         image: sergioscardigno82/mi_app_clima:12
+        envFrom:
+        - secretRef:
+            name: mi-secreto
         resources:
           limits:
             memory: "512Mi"
