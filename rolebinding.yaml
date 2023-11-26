@@ -5,7 +5,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: argocd-application-controller
-    namespace: argocd
+    namespace: default
 roleRef:
   kind: ClusterRole
   name: argocd-network-policy-manager
