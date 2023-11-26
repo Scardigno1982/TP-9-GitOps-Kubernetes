@@ -1,9 +1,10 @@
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: Role
 metadata:
-  name: argocd-network-policy-manager
+  name: argocd-application-controller
+  namespace: default  # Asegúrate de usar el namespace correcto
 rules:
-  - apiGroups: ["networking.k8s.io"]
-    resources: ["networkpolicies"]
-    verbs: ["get", "list", "watch", "create", "update", "delete"]
-
+  - apiGroups: [""]
+    resources: ["endpoints"]
+    verbs: ["get", "list", "watch"]
+  # Añade aquí otras reglas necesarias
